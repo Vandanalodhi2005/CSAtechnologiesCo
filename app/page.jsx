@@ -1,9 +1,8 @@
 import Hero from '@/components/home/Hero';
-import TechStrip from '@/components/home/TechStrip';
 import ServicesSection from '@/components/home/ServicesSection';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
 import FeaturedProjects from '@/components/home/FeaturedProjects';
 import ProcessSection from '@/components/home/ProcessSection';
-import WhyChooseUs from '@/components/home/WhyChooseUs';
 import TechGrid from '@/components/home/TechGrid';
 import Testimonials from '@/components/home/Testimonials';
 import CTASection from '@/components/home/CTASection';
@@ -11,14 +10,28 @@ import CTASection from '@/components/home/CTASection';
 export default function HomePage() {
   return (
     <main>
+      {/* 1. Hero — Dark */}
       <Hero />
-      <TechStrip />
+
+      {/* 2. Services — Light */}
       <ServicesSection />
-      <FeaturedProjects />
-      <ProcessSection />
+
+      {/* 3. Why Choose CSA — Dark (with office photo) */}
       <WhyChooseUs />
+
+      {/* 4. Featured Projects — Light */}
+      <FeaturedProjects />
+
+      {/* 5. How We Work (Process) — Light */}
+      <ProcessSection />
+
+      {/* 6. Technology Stack — Light */}
       <TechGrid />
+
+      {/* 7. Client Reviews (Testimonials) — Dark */}
       <Testimonials />
+
+      {/* 8. Let's Talk (Contact Form) — Light */}
       <CTASection />
     </main>
   );

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hsBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#EFF6FF" />
+    </linearGradient>
+    <linearGradient id="hsBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <filter id="hsShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect width="700" height="440" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Browser Chrome / Tab -->
+  <rect width="700" height="36" rx="10" fill="#F1F5F9" />
+  <circle cx="20" cy="18" r="5" fill="#EF4444" />
+  <circle cx="36" cy="18" r="5" fill="#F59E0B" />
+  <circle cx="52" cy="18" r="5" fill="#10B981" />
+  <rect x="120" y="8" width="460" height="20" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="350" y="22" fill="#64748B" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">https://healthsync-portal.com/dashboard/telehealth</text>
+
+  <!-- Healthcare Portal Header -->
+  <rect y="36" width="700" height="50" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="1"/>
+  <circle cx="35" cy="61" r="14" fill="#0284C7" />
+  <path d="M35 53 v16 M27 61 h16" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <text x="58" y="66" fill="#0B1220" font-family="system-ui, sans-serif" font-size="16" font-weight="800">HealthSync<tspan fill="#0284C7">PRO</tspan></text>
+  <text x="195" y="65" fill="#0284C7" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Patient Dashboard</text>
+  <text x="320" y="65" fill="#64748B" font-family="system-ui, sans-serif" font-size="12">Consultations</text>
+  <text x="430" y="65" fill="#64748B" font-family="system-ui, sans-serif" font-size="12">Health Records (EHR)</text>
+  <rect x="575" y="48" width="105" height="26" rx="13" fill="#E0F2FE" />
+  <text x="627" y="65" fill="#0369A1" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">● HIPAA Encrypted</text>
+
+  <!-- Main Content Area -->
+  <rect y="86" width="700" height="354" fill="url(#hsBg)"/>
+
+  <!-- Left Sidebar / Stats -->
+  <g transform="translate(24, 102)">
+    <!-- Active Telehealth Card -->
+    <rect width="400" height="200" rx="10" fill="#0F172A" filter="url(#hsShadow)"/>
+    <rect x="15" y="15" width="370" height="125" rx="8" fill="#1E293B"/>
+    <!-- Doctor Video Window -->
+    <circle cx="200" cy="70" r="28" fill="#334155"/>
+    <path d="M185 92 A15 15 0 0 1 215 92 Z" fill="#64748B"/>
+    <rect x="25" y="25" width="90" height="22" rx="4" fill="#0284C7" opacity="0.9"/>
+    <text x="70" y="40" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">LIVE WEBRTC HD</text>
+    
+    <!-- Video Controls Bar -->
+    <rect x="15" y="150" width="370" height="40" rx="6" fill="#1E293B"/>
+    <text x="30" y="174" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Dr. Sunita Rao, MD (Cardiology)</text>
+    <circle cx="310" cy="170" r="12" fill="#334155"/>
+    <circle cx="340" cy="170" r="12" fill="#334155"/>
+    <circle cx="370" cy="170" r="12" fill="#EF4444"/>
+
+    <!-- Bottom Metrics -->
+    <g transform="translate(0, 215)">
+      <rect width="192" height="95" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="16" y="32" fill="#64748B" font-family="system-ui, sans-serif" font-size="11" font-weight="600">AVERAGE WAIT TIME</text>
+      <text x="16" y="65" fill="#0284C7" font-family="system-ui, sans-serif" font-size="26" font-weight="800">4.2 min</text>
+      <text x="16" y="84" fill="#10B981" font-family="system-ui, sans-serif" font-size="10" font-weight="600">↓ 68% vs in-clinic</text>
+
+      <rect x="208" width="192" height="95" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="224" y="32" fill="#64748B" font-family="system-ui, sans-serif" font-size="11" font-weight="600">PATIENT SATISFACTION</text>
+      <text x="224" y="65" fill="#0B1220" font-family="system-ui, sans-serif" font-size="26" font-weight="800">4.9 / 5.0</text>
+      <text x="224" y="84" fill="#0284C7" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Based on 8,200+ visits</text>
+    </g>
+  </g>
+
+  <!-- Right Panel: Patient Intake & Vitals -->
+  <g transform="translate(440, 102)">
+    <rect width="236" height="310" rx="10" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#hsShadow)"/>
+    <text x="18" y="32" fill="#0B1220" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Digital Patient Chart</text>
+    
+    <!-- Vital 1 -->
+    <rect x="18" y="48" width="200" height="50" rx="6" fill="#F8FAFC" stroke="#F1F5F9"/>
+    <text x="30" y="68" fill="#64748B" font-family="system-ui, sans-serif" font-size="10">HEART RATE</text>
+    <text x="30" y="88" fill="#0B1220" font-family="system-ui, sans-serif" font-size="16" font-weight="700">72 BPM</text>
+    <text x="170" y="80" fill="#10B981" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Normal</text>
+
+    <!-- Vital 2 -->
+    <rect x="18" y="108" width="200" height="50" rx="6" fill="#F8FAFC" stroke="#F1F5F9"/>
+    <text x="30" y="128" fill="#64748B" font-family="system-ui, sans-serif" font-size="10">BLOOD PRESSURE</text>
+    <text x="30" y="148" fill="#0B1220" font-family="system-ui, sans-serif" font-size="16" font-weight="700">118 / 76</text>
+    <text x="170" y="140" fill="#10B981" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Optimal</text>
+
+    <!-- EHR Notes -->
+    <text x="18" y="185" fill="#64748B" font-family="system-ui, sans-serif" font-size="11" font-weight="700">ACTIVE RX PRESCRIPTIONS</text>
+    <rect x="18" y="196" width="200" height="34" rx="4" fill="#F1F5F9"/>
+    <text x="28" y="217" fill="#334155" font-family="system-ui, sans-serif" font-size="11">Amoxicillin 500mg • 2x Daily</text>
+
+    <rect x="18" y="238" width="200" height="34" rx="4" fill="#F1F5F9"/>
+    <text x="28" y="259" fill="#334155" font-family="system-ui, sans-serif" font-size="11">Lisinopril 10mg • 1x Daily</text>
+
+    <rect x="18" y="282" width="200" height="20" rx="4" fill="#0284C7" />
+    <text x="118" y="296" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">Generate Verified e-Prescription</text>
+  </g>
+</svg>

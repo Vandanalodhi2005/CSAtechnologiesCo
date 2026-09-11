@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ecomBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061426"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#ecomBg)"/>
+
+  <!-- Funnel Graphic -->
+  <g transform="translate(100, 70)">
+    <!-- Stage 1 -->
+    <path d="M 50 20 L 550 20 L 480 80 L 120 80 Z" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="300" y="55" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Product Discovery (100k Store Visitors)</text>
+
+    <!-- Stage 2 -->
+    <path d="M 125 90 L 475 90 L 420 150 L 180 150 Z" fill="rgba(16, 185, 129, 0.25)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="300" y="125" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Add to Cart &amp; Customization (42k Users)</text>
+
+    <!-- Stage 3 -->
+    <path d="M 185 160 L 415 160 L 365 220 L 235 220 Z" fill="rgba(16, 185, 129, 0.4)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="300" y="195" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">1-Click Fast Checkout</text>
+
+    <!-- Stage 4: Result -->
+    <rect x="210" y="235" width="180" height="50" rx="8" fill="url(#greenGrad)"/>
+    <text x="300" y="265" fill="#061426" font-family="system-ui, sans-serif" font-size="16" font-weight="900" text-anchor="middle">✓ +142% CONVERSION</text>
+  </g>
+
+  <!-- Bottom Metric Pills -->
+  <g transform="translate(140, 360)">
+    <rect width="240" height="42" rx="21" fill="#0B1E38" stroke="#334155"/>
+    <text x="120" y="26" fill="#34D399" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">🛒 Cart Abandonment: 28% (-46%)</text>
+
+    <rect x="280" width="240" height="42" rx="21" fill="#0B1E38" stroke="#334155"/>
+    <text x="400" y="26" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">⚡ Average Page Load: 0.8s</text>
+  </g>
+</svg>

@@ -1,122 +1,217 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import Button from '@/components/ui/Button';
-import Badge from '@/components/ui/Badge';
-
-const techBadges = ['React', 'Next.js', 'Node.js', 'MongoDB', 'WordPress'];
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative bg-brand-navy overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-28">
-      {/* Background Subtle Glow */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-blue/3 rounded-full blur-[100px] pointer-events-none" />
+    <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-28 bg-[#050C17]">
+      {/* ── Background Subtle Deep Gradient ── */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#050C17] via-[#071326] to-[#040913] pointer-events-none" />
+
+      {/* ── Slanted Electric Blue Polygon in Background ── */}
+      <div className="absolute top-1/2 -translate-y-1/2 right-[-2%] lg:right-[4%] w-[420px] sm:w-[500px] lg:w-[540px] h-[300px] sm:h-[360px] lg:h-[380px] bg-gradient-to-br from-[#0055D4] via-[#0066FF] to-[#009BFF] rounded-[42px] -rotate-[14deg] opacity-95 shadow-[0_0_100px_rgba(0,102,255,0.4)] pointer-events-none" />
+
+      {/* Subtle Ambient Radial Glows */}
+      <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-brand-blue/15 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#0084FF]/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="container-main relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* Left Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* ── Left Content Column ── */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className="lg:col-span-7"
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            {/* Eyebrow */}
+            {/* Eyebrow: Your Vision / Our Code / Real Results */}
             <motion.p
-              className="text-xs font-medium tracking-[0.25em] text-white/50 mb-6"
+              className="text-sm font-medium tracking-wide text-[#5692E8] mb-5 flex items-center gap-2.5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.5 }}
             >
-              YOUR VISION &nbsp;•&nbsp; OUR CODE &nbsp;•&nbsp; REAL RESULTS
+              <span>Your Vision</span>
+              <span className="text-[#2C528A]">/</span>
+              <span>Our Code</span>
+              <span className="text-[#2C528A]">/</span>
+              <span>Real Results</span>
             </motion.p>
 
-            {/* Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-heading font-extrabold leading-[1.1] tracking-tight text-white mb-6">
-              We Build Modern Web Solutions{' '}
-              <br className="hidden md:block" />
-              for{' '}
-              <span className="text-gradient-blue">Growing Businesses</span>
+            {/* Main Heading: Matching Exact Layout & Font */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-heading font-extrabold leading-[1.14] tracking-tight text-white mb-6">
+              We Build Modern <br />
+              Web Solutions for <br />
+              <span className="text-[#0084FF]">Growing Businesses</span>
             </h1>
 
             {/* Description */}
             <motion.p
-              className="text-base md:text-lg text-white/60 leading-relaxed max-w-xl mb-8"
+              className="text-[#8E9EB5] text-[15px] sm:text-[16px] leading-[1.65] max-w-lg mb-8 font-normal"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              CSA Technologies CO is a full-service software development company specializing in modern websites, e-commerce solutions, and custom web applications. We turn business ideas into powerful digital products.
+              CSA Technologies CO is a full-stack IT company specializing in
+              website development, e-commerce solutions, and custom web
+              applications. We turn your ideas into powerful digital products.
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTA Buttons: Pill Shaped matching reference */}
             <motion.div
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap items-center gap-3.5 mb-12"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <Button href="/contact" size="lg" className="group">
-                Start Your Project
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
-              <Button href="/portfolio" variant="outline" size="lg">
-                View Our Work
-              </Button>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-[#0066FF] to-[#009BFF] hover:brightness-110 shadow-[0_4px_20px_rgba(0,102,255,0.45)] hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <span>Start Your Project</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm text-white bg-[#071326] border border-[#1E3352] hover:border-[#0084FF] hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <span>View Our Work</span>
+              </Link>
             </motion.div>
 
-            {/* Tech Badges */}
+            {/* Tech Stack Icons Row */}
             <motion.div
-              className="flex flex-wrap items-center gap-2 mt-8"
+              className="flex flex-wrap items-center gap-6 sm:gap-7 text-xs sm:text-sm font-medium text-white/90"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
             >
-              {techBadges.map((tech) => (
-                <Badge key={tech} variant="dark">
-                  {tech}
-                </Badge>
-              ))}
+              {/* React */}
+              <div className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <svg
+                  className="w-5 h-5 text-[#00D8FF]"
+                  viewBox="-11.5 -10.23174 23 20.46348"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                >
+                  <circle cx="0" cy="0" r="2.05" fill="#00D8FF" />
+                  <ellipse rx="11" ry="4.2" />
+                  <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+                  <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+                </svg>
+                <span>React</span>
+              </div>
+
+              {/* Next.js */}
+              <div className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <svg className="w-5 h-5" viewBox="0 0 180 180" fill="none">
+                  <circle cx="90" cy="90" r="88" fill="black" stroke="white" strokeWidth="6" />
+                  <path
+                    d="M149.508 157.438L69.147 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.137 149.508 157.438Z"
+                    fill="white"
+                  />
+                  <rect x="115" y="54" width="12" height="72" fill="white" />
+                </svg>
+                <span>Next.js</span>
+              </div>
+
+              {/* Node.js */}
+              <div className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <svg className="w-5 h-5 text-[#68A063]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l9.5 5.5v11L12 24l-9.5-5.5v-11L12 2zm0 2.3L4.5 8.7v8.6L12 21.7l7.5-4.4V8.7L12 4.3z" />
+                  <text
+                    x="12"
+                    y="15.5"
+                    fontSize="7.5"
+                    fontWeight="bold"
+                    fill="#68A063"
+                    textAnchor="middle"
+                    fontFamily="sans-serif"
+                  >
+                    JS
+                  </text>
+                </svg>
+                <span>Node.js</span>
+              </div>
+
+              {/* MongoDB */}
+              <div className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <svg className="w-4 h-5 text-[#00ED64]" viewBox="0 0 24 28" fill="currentColor">
+                  <path
+                    d="M11.996 0c-.288 0-.573.08-.823.235C10.024.945 2.128 6.136 2.003 14.77c-.078 5.378 3.528 10.457 9.17 12.995.263.118.556.177.848.177.29 0 .584-.06.847-.177 5.642-2.538 9.248-7.617 9.17-12.995C21.913 6.136 14.017.945 12.868.235A1.666 1.666 0 0 0 11.996 0zm-.008 2.275c1.47 1.05 7.747 5.767 7.822 12.553.057 3.96-2.54 7.818-6.903 9.947-.308.15-.615.15-.919 0-4.363-2.13-6.96-5.987-6.903-9.947.075-6.786 6.353-11.503 7.823-12.553z"
+                    fill="#00ED64"
+                  />
+                  <path
+                    d="M11.996 4v19c-3.5-.8-5.5-4.2-5.5-8.5 0-4.8 4.2-8.5 5.5-10.5z"
+                    fill="#13AA52"
+                  />
+                </svg>
+                <span>MongoDB</span>
+              </div>
+
+              {/* WordPress */}
+              <div className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <svg className="w-5 h-5 text-[#21759B]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 1.2c5.964 0 10.8 4.836 10.8 10.8 0 2.376-.77 4.57-2.074 6.352l-5.69-15.586C14.184 1.77 13.11 1.2 12 1.2zm-8.736 10.8c0-1.896.536-3.666 1.464-5.176l4.636 12.7C5.992 18.156 3.264 15.348 3.264 12zm8.736 10.8c-1.396 0-2.716-.312-3.896-.868l4.24-12.316 4.348 11.916c-.036.06-.076.12-.116.176-1.32.7-2.852 1.092-4.576 1.092zm6.208-2.604l-3.328-9.664c.548-.028 1.04-.156 1.04-.156.492-.056.436-.784-.056-.756 0 0-1.488.112-2.44.112-.924 0-2.412-.112-2.412-.112-.492-.028-.548.7-.056.756 0 0 .464.128.956.156l1.42 3.9-2.02 6.06-3.344-9.96c.548-.028 1.04-.156 1.04-.156.492-.056.436-.784-.056-.756 0 0-1.488.112-2.44.112-.224 0-.48-.008-.736-.02 1.832-2.64 4.86-4.38 8.3-4.38 2.012 0 3.88.6 5.436 1.636-.048.332-.084.724-.084 1.144 0 1.26.476 2.38 1.008 3.388.42.784.868 1.624.868 2.94 0 .924-.224 1.708-.56 2.408l3.18 8.708c.516-.924.848-1.996.848-3.14 0-1.29-.28-2.512-.784-3.612z" />
+                </svg>
+                <span>WordPress</span>
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Visual — Laptop Code Mockup */}
+          {/* ── Right Column: Laptop Visual Showcase ── */}
           <motion.div
-            className="relative"
+            className="lg:col-span-5 relative"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
           >
-            <div className="relative">
-              {/* Glow behind laptop */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-brand-blue/20 to-transparent rounded-2xl blur-2xl pointer-events-none" />
-
-              {/* Laptop Mockup SVG */}
-              <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-card-dark">
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
+              {/* Laptop Image */}
+              <div className="relative z-10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/hero/laptop-mockup.svg"
-                  alt="CSA Technologies CO — Modern full-stack web development code preview with Next.js, Node.js and MongoDB"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  src="/images/hero/hero-laptop.jpg"
+                  alt="CSA Technologies CO — Full-stack software development with Build Innovate Grow"
+                  width={900}
+                  height={560}
+                  className="w-full h-auto object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.75)]"
                   loading="eager"
                 />
               </div>
 
-              {/* Floating Card */}
+              {/* Floating Bottom Card: Let's build something great together → */}
               <motion.div
-                className="absolute -bottom-4 -right-2 md:-right-6 bg-brand-navy-card border border-white/10 rounded-lg p-3 shadow-card-dark hidden sm:flex items-center gap-3"
-                animate={{ y: [0, -6, 0] }}
+                className="absolute -bottom-2 right-2 sm:right-6 z-20 bg-[#07162C]/90 border border-[#142948] rounded-xl px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-md hidden sm:flex items-center gap-3"
+                animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <div className="w-8 h-8 rounded-full bg-brand-blue/20 flex items-center justify-center">
-                  <ArrowUpRight className="w-4 h-4 text-brand-blue" />
+                <div className="w-8 h-8 rounded-lg bg-[#0E2445] flex items-center justify-center text-white/90 shrink-0">
+                  <svg
+                    className="w-4 h-4 text-white/90"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                  </svg>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-white">Let&apos;s build something great</p>
-                  <p className="text-[10px] text-white/40">together →</p>
+                  <p className="text-[12px] font-semibold text-white leading-snug">
+                    Let&apos;s build something great
+                  </p>
+                  <p className="text-[11px] text-white/60 flex items-center gap-1 font-medium">
+                    together →
+                  </p>
                 </div>
               </motion.div>
             </div>

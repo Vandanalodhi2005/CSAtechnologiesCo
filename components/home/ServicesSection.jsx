@@ -17,16 +17,24 @@ const iconMap = {
 
 export default function ServicesSection() {
   return (
-    <section className="section-padding bg-white" id="services">
+    <section className="py-20 md:py-28 bg-white" id="services">
       <div className="container-main">
         {/* Heading */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
-          <SectionHeading
-            eyebrow="OUR SERVICES"
-            title={<>Complete Digital Solutions<br className="hidden md:block" />for Your Business</>}
-          />
-          <p className="text-brand-text-muted text-base leading-relaxed max-w-md lg:text-right">
-            From business websites to complex web applications, we design and develop scalable digital solutions tailored to your business goals.
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-14">
+          <div>
+            <span className="text-xs font-semibold tracking-[0.2em] text-brand-blue uppercase mb-3 block">
+              OUR SERVICES
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-heading font-extrabold leading-[1.15] tracking-tight text-brand-text-dark">
+              Complete Digital Solutions
+              <br className="hidden md:block" />
+              for Your Business
+            </h2>
+          </div>
+          <p className="text-brand-text-muted text-[15px] leading-relaxed max-w-md lg:text-right lg:pt-8">
+            We offer end-to-end development services to help you
+            build, launch and grow your online presence. From simple
+            business websites to complex web applications — we do it all.
           </p>
         </div>
 
@@ -44,20 +52,15 @@ export default function ServicesSection() {
               >
                 <Link
                   href={`/services#${service.id}`}
-                  className="group flex flex-col h-full p-6 rounded-xl border border-brand-border bg-white hover:border-brand-blue/30 hover:shadow-card-hover transition-all duration-300"
+                  className="group flex flex-col h-full p-6 rounded-xl border border-[#E8ECF1] bg-white hover:border-brand-blue/30 hover:shadow-card-hover transition-all duration-300"
                 >
-                  {/* Icon + Number */}
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="w-11 h-11 rounded-lg bg-brand-blue/10 flex items-center justify-center group-hover:bg-brand-blue/20 transition-colors duration-300">
-                      {IconComponent && <IconComponent className="w-5 h-5 text-brand-blue" />}
-                    </div>
-                    <span className="text-sm font-bold text-brand-text-muted/30 font-heading">
-                      {service.number}
-                    </span>
+                  {/* Icon */}
+                  <div className="w-11 h-11 rounded-lg bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors duration-300">
+                    {IconComponent && <IconComponent className="w-5 h-5 text-brand-blue" />}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-heading font-bold text-brand-text-dark mb-2 group-hover:text-brand-blue transition-colors duration-200">
+                  <h3 className="text-[17px] font-heading font-bold text-brand-text-dark mb-2 group-hover:text-brand-blue transition-colors duration-200">
                     {service.title}
                   </h3>
 

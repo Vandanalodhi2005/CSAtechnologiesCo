@@ -1,91 +1,160 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, FileText, Code, Rocket, Headphones } from 'lucide-react';
-import SectionHeading from '@/components/ui/SectionHeading';
 import { PROCESS_STEPS } from '@/data/process';
-
-const iconMap = { Search, FileText, Code, Rocket, Headphones };
 
 export default function ProcessSection() {
   return (
-    <section className="section-padding bg-white" id="process">
+    <section className="pt-8 pb-20 md:pt-12 md:pb-28 bg-[#F8FAFD]" id="process">
       <div className="container-main">
-        <SectionHeading
-          eyebrow="OUR PROCESS"
-          title="How We Work"
-          description="A unique and transparent process to turn your ideas into a successful digital product."
-          align="center"
-          className="mb-16"
-        />
-
-        {/* Desktop Horizontal Timeline */}
-        <div className="hidden lg:block relative">
-          {/* Connector Line */}
-          <div className="absolute top-8 left-[10%] right-[10%] h-[2px] bg-brand-border" />
-
-          <div className="grid grid-cols-5 gap-4">
-            {PROCESS_STEPS.map((step, i) => {
-              const IconComponent = iconMap[step.icon];
-              return (
-                <motion.div
-                  key={step.step}
-                  className="relative flex flex-col items-center text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: i * 0.12, duration: 0.4 }}
-                >
-                  {/* Node Circle */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-brand-blue/10 border-2 border-brand-blue flex items-center justify-center mb-5">
-                    {IconComponent && <IconComponent className="w-6 h-6 text-brand-blue" />}
-                  </div>
-
-                  {/* Step Number */}
-                  <span className="text-xs font-bold text-brand-blue mb-1.5">{step.step}</span>
-
-                  {/* Title */}
-                  <h3 className="text-base font-heading font-bold text-brand-text-dark mb-2">
-                    {step.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-sm text-brand-text-muted leading-relaxed max-w-[200px]">
-                    {step.shortDesc}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+        {/* Header - Left Aligned matching reference image */}
+        <div className="mb-14 md:mb-16">
+          <span className="text-xs font-bold tracking-[0.18em] text-[#0066FF] uppercase mb-2.5 block">
+            OUR PROCESS
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-heading font-extrabold leading-[1.15] tracking-tight text-[#0B1220] mb-3">
+            How We Work
+          </h2>
+          <p className="text-[#64748B] text-[15px] leading-relaxed max-w-xl">
+            A simple and transparent process to turn your idea into a successful digital product.
+          </p>
         </div>
 
-        {/* Mobile Vertical Timeline */}
-        <div className="lg:hidden space-y-6">
+        {/* Desktop 5-Step Row with Horizontal Arrows */}
+        <div className="hidden lg:grid lg:grid-cols-5 gap-6 xl:gap-8">
           {PROCESS_STEPS.map((step, i) => {
-            const IconComponent = iconMap[step.icon];
+            const isFirst = i === 0;
+            const stepNum = step.step; // '01', '02', etc.
+
             return (
               <motion.div
                 key={step.step}
-                className="flex gap-4"
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="flex flex-col"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: i * 0.1, duration: 0.45, ease: 'easeOut' }}
+              >
+                {/* Top: Circle Badge + Arrow to next */}
+                <div className="flex items-center justify-between mb-5 pr-2">
+                  {/* Circle Badge */}
+                  {isFirst ? (
+                    <div className="w-12 h-12 rounded-full bg-[#0066FF] text-white font-heading font-bold text-sm flex items-center justify-center shadow-[0_4px_16px_rgba(0,102,255,0.35)] flex-shrink-0">
+                      01
+                    </div>
+                  ) : (
+                    <div className="relative w-12 h-12 rounded-full bg-white border border-[#93C5FD] flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
+                      {/* Stylized progress shape at bottom matching reference image */}
+                      <div
+                        className="absolute bottom-0 inset-x-0 bg-[#0066FF]/15 rounded-b-full transition-all"
+                        style={{ height: `${(i + 1) * 16}%` }}
+                      />
+                      <svg
+                        className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
+                        viewBox="0 0 48 48"
+                      >
+                        <circle
+                          cx="24"
+                          cy="24"
+                          r="21.5"
+                          fill="none"
+                          stroke="#0066FF"
+                          strokeWidth="1.5"
+                          strokeDasharray={`${((i + 1) / 5) * 135} 135`}
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <span className="relative z-10 font-heading font-bold text-sm text-[#0066FF]">
+                        {stepNum}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Horizontal Arrow between steps */}
+                  {i < PROCESS_STEPS.length - 1 && (
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#94A3B8"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-[#94A3B8] ml-auto mr-1 flex-shrink-0"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  )}
+                </div>
+
+                {/* Step Title */}
+                <h3 className="text-lg font-heading font-bold text-[#0B1220] mb-2">
+                  {step.title}
+                </h3>
+
+                {/* Step Description */}
+                <p className="text-[13px] text-[#64748B] leading-relaxed max-w-[210px]">
+                  {step.shortDesc}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Tablet & Mobile: Responsive Layout */}
+        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-8 relative">
+          {PROCESS_STEPS.map((step, i) => {
+            const isFirst = i === 0;
+            const stepNum = step.step;
+
+            return (
+              <motion.div
+                key={step.step}
+                className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-[#E8ECF1] shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
               >
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-blue/10 border-2 border-brand-blue flex items-center justify-center flex-shrink-0">
-                    {IconComponent && <IconComponent className="w-5 h-5 text-brand-blue" />}
+                {/* Circle Badge */}
+                {isFirst ? (
+                  <div className="w-11 h-11 rounded-full bg-[#0066FF] text-white font-heading font-bold text-sm flex items-center justify-center shadow-[0_4px_14px_rgba(0,102,255,0.35)] flex-shrink-0">
+                    01
                   </div>
-                  {i < PROCESS_STEPS.length - 1 && (
-                    <div className="w-[2px] flex-1 bg-brand-border mt-2" />
-                  )}
-                </div>
-                <div className="pb-6">
-                  <span className="text-xs font-bold text-brand-blue">{step.step}</span>
-                  <h3 className="text-base font-heading font-bold text-brand-text-dark mt-1 mb-1.5">
+                ) : (
+                  <div className="relative w-11 h-11 rounded-full bg-white border border-[#93C5FD] flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
+                    <div
+                      className="absolute bottom-0 inset-x-0 bg-[#0066FF]/15 rounded-b-full"
+                      style={{ height: `${(i + 1) * 16}%` }}
+                    />
+                    <svg
+                      className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
+                      viewBox="0 0 48 48"
+                    >
+                      <circle
+                        cx="24"
+                        cy="24"
+                        r="21.5"
+                        fill="none"
+                        stroke="#0066FF"
+                        strokeWidth="1.5"
+                        strokeDasharray={`${((i + 1) / 5) * 135} 135`}
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <span className="relative z-10 font-heading font-bold text-sm text-[#0066FF]">
+                      {stepNum}
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex-1">
+                  <h3 className="text-base font-heading font-bold text-[#0B1220] mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-brand-text-muted leading-relaxed">
+                  <p className="text-xs text-[#64748B] leading-relaxed">
                     {step.shortDesc}
                   </p>
                 </div>

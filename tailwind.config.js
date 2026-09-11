@@ -28,8 +28,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-outfit)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-outfit)', 'sans-serif'],
+        sans: ['var(--font-plus-jakarta)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-plus-jakarta)', 'sans-serif'],
       },
       boxShadow: {
         'card-light': '0 4px 20px -2px rgba(11, 18, 32, 0.05), 0 2px 6px -1px rgba(11, 18, 32, 0.02)',

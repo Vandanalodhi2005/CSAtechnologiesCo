@@ -13,7 +13,7 @@ export const BLOG_POSTS = [
       role: 'Lead Architect at CSA Technologies CO',
       avatar: '/images/about/team-1.webp',
     },
-    image: '/images/blog/nextjs-performance.webp',
+    image: '/images/projects/technosky.jpg',
     tags: ['Next.js', 'Web Development', 'Performance', 'SEO'],
     content: `
 ## The Evolution of Corporate Web Development
@@ -57,7 +57,7 @@ Investing in modern architecture pays exponential dividends over time. If your c
       role: 'Principal Solutions Consultant',
       avatar: '/images/about/team-2.webp',
     },
-    image: '/images/blog/custom-vs-saas.webp',
+    image: '/images/projects/innovationdynamicsgroup.jpg',
     tags: ['SaaS', 'Custom Software', 'Business Growth', 'Architecture'],
     content: `
 ## The Buy vs Build Dilemma
@@ -95,7 +95,7 @@ At CSA Technologies CO, we help businesses analyze the 3-year Total Cost of Owne
       role: 'Lead Architect at CSA Technologies CO',
       avatar: '/images/about/team-1.webp',
     },
-    image: '/images/blog/ecommerce-conversion.webp',
+    image: '/images/projects/printscarts.jpg',
     tags: ['E-Commerce', 'UX Design', 'Conversion Rate', 'Checkout'],
     content: `
 ## Why 70% of Online Shoppers Abandon Their Carts

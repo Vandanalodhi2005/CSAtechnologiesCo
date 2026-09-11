@@ -31,8 +31,12 @@ const initialState = {
   details: '',
 };
 
-export default function ContactForm({ dark = false }) {
-  const [form, setForm] = useState(initialState);
+export default function ContactForm({ dark = false, initialService = '', initialBudget = '' }) {
+  const [form, setForm] = useState({
+    ...initialState,
+    service: initialService || '',
+    budget: initialBudget || '',
+  });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
@@ -69,10 +73,19 @@ export default function ContactForm({ dark = false }) {
       return;
     }
     setStatus('sending');
-    // Simulate API call — replace with real endpoint
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setStatus('success');
-    setForm(initialState);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Network response was not ok');
+      setStatus('success');
+      setForm(initialState);
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+    }
     setTimeout(() => setStatus('idle'), 5000);
   };
 

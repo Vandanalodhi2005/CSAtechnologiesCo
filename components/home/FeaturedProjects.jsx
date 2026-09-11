@@ -3,77 +3,78 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import SectionHeading from '@/components/ui/SectionHeading';
-import Badge from '@/components/ui/Badge';
 import { PROJECTS } from '@/data/projects';
 
 export default function FeaturedProjects() {
   const featured = PROJECTS.filter((p) => p.featured);
 
   return (
-    <section className="section-padding bg-brand-light-bg" id="portfolio">
+    <section className="pt-20 pb-10 md:pt-28 md:pb-14 bg-[#F8FAFD]" id="portfolio">
       <div className="container-main">
-        {/* Heading */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-          <SectionHeading
-            eyebrow="OUR WORK"
-            title="Featured Projects"
-            description="From e-commerce stores to business platforms, we've helped clients across industries build their digital presence."
-          />
+        {/* Header Section matching reference */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <span className="text-xs font-bold tracking-[0.18em] text-[#0066FF] uppercase mb-2 block">
+              OUR WORK
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-heading font-extrabold leading-[1.15] tracking-tight text-[#0B1220] mb-3">
+              Featured Projects
+            </h2>
+            <p className="text-[#64748B] text-[15px] leading-relaxed max-w-xl">
+              From e-commerce stores to business platforms, we&apos;ve helped
+              clients across industries build their digital presence.
+            </p>
+          </div>
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:text-brand-blue-hover transition-colors whitespace-nowrap group"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0066FF] hover:text-[#0052CC] transition-colors whitespace-nowrap group self-start md:self-end"
           >
-            View All Projects
+            <span>View All Projects</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
 
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* 4 Project Cards in a row matching reference */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((project, i) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
+              viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: i * 0.1, duration: 0.45, ease: 'easeOut' }}
             >
               <Link
                 href={`/portfolio/${project.slug}`}
-                className="group block bg-white rounded-xl border border-brand-border overflow-hidden hover:shadow-card-hover hover:border-brand-blue/20 transition-all duration-300"
+                className="group flex flex-col h-full bg-white rounded-2xl border border-[#E8ECF1] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,102,255,0.12)] hover:border-[#0066FF]/30 transition-all duration-300"
               >
-                {/* Image */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-brand-navy/5">
+                {/* Visual Mockup Container */}
+                <div className="relative aspect-[16/11] overflow-hidden bg-[#0A1628]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`/images/projects/${project.slug}.svg`}
+                    src={project.image || `/images/projects/${project.slug}.jpg`}
                     alt={`${project.name} — ${project.category} by CSA Technologies CO`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     loading="lazy"
                   />
                 </div>
 
-                {/* Content */}
-                <div className="p-5">
-                  <div className="flex items-center justify-between mb-3">
-                    <Badge>{project.category}</Badge>
-                    <span className="text-xs text-brand-text-muted">{project.year}</span>
+                {/* Card Content: Title First, Badge Second, View Project Third */}
+                <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
+                  <div>
+                    <h3 className="text-[17px] font-heading font-bold text-[#0B1220] group-hover:text-[#0066FF] transition-colors mb-2">
+                      {project.name}
+                    </h3>
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#EBF5FF] text-[#0066FF]">
+                        {project.category}
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-heading font-bold text-brand-text-dark mb-1.5 group-hover:text-brand-blue transition-colors">
-                    {project.name}
-                  </h3>
-                  <p className="text-sm text-brand-text-muted line-clamp-2 mb-4">
-                    {project.shortDescription}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <p className="text-xs text-brand-text-muted">
-                      {project.technologies.slice(0, 3).join(' • ')}
-                    </p>
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-blue">
-                      View Project
-                      <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5" />
-                    </span>
+
+                  <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0066FF] group-hover:text-[#0052CC] transition-colors pt-2">
+                    <span>View Project</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
               </Link>
