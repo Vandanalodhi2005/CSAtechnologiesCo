@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="laptopBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081A32" />
+      <stop offset="100%" stop-color="#040D1A" />
+    </linearGradient>
+    <linearGradient id="codeBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B84F3" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Laptop Screen Container -->
+  <rect width="800" height="500" rx="12" fill="url(#laptopBg)" stroke="#1E293B" stroke-width="2"/>
+  
+  <!-- Window Header Bar -->
+  <rect width="800" height="38" rx="12" fill="#061222" />
+  <circle cx="25" cy="19" r="6" fill="#EF4444" opacity="0.85" />
+  <circle cx="45" cy="19" r="6" fill="#F59E0B" opacity="0.85" />
+  <circle cx="65" cy="19" r="6" fill="#10B981" opacity="0.85" />
+  <text x="400" y="24" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">csa-technologies-co — App.jsx</text>
+
+  <!-- Split Screen: Left Code, Right Live Canvas Preview -->
+  <!-- Left: Code Editor -->
+  <g transform="translate(20, 55)">
+    <!-- Sidebar / File tree hint -->
+    <rect x="0" y="0" width="370" height="420" rx="8" fill="#050E1C" stroke="#0F2847" stroke-width="1"/>
+    
+    <!-- Code Editor Tabs -->
+    <rect x="0" y="0" width="370" height="32" rx="8" fill="#0A1E38" />
+    <rect x="10" y="4" width="100" height="24" rx="4" fill="#0B84F3" fill-opacity="0.2" />
+    <text x="60" y="20" fill="#38BDF8" font-family="monospace" font-size="11" text-anchor="middle">App.jsx</text>
+    <text x="145" y="20" fill="#64748B" font-family="monospace" font-size="11">schema.prisma</text>
+    <text x="240" y="20" fill="#64748B" font-family="monospace" font-size="11">server.js</text>
+
+    <!-- Code Lines -->
+    <text x="20" y="65" font-family="monospace" font-size="12" fill="#38BDF8">import <tspan fill="#F8FAFC">React</tspan> from <tspan fill="#34D399">'react'</tspan>;</text>
+    <text x="20" y="90" font-family="monospace" font-size="12" fill="#38BDF8">import <tspan fill="#F8FAFC">{ CSASolutions }</tspan> from <tspan fill="#34D399">'@csa/core'</tspan>;</text>
+    <text x="20" y="115" font-family="monospace" font-size="12" fill="#64748B">// Modern enterprise web architecture</text>
+    <text x="20" y="140" font-family="monospace" font-size="12" fill="#818CF8">export default async function <tspan fill="#FBBF24">EnterpriseApp</tspan>() {</text>
+    <text x="35" y="165" font-family="monospace" font-size="12" fill="#F8FAFC">  const client = <tspan fill="#818CF8">await</tspan> CSASolutions.<tspan fill="#60A5FA">initialize</tspan>({</text>
+    <text x="50" y="190" font-family="monospace" font-size="12" fill="#94A3B8">    stack: <tspan fill="#34D399">['Next.js', 'Node.js', 'MongoDB']</tspan>,</text>
+    <text x="50" y="215" font-family="monospace" font-size="12" fill="#94A3B8">    performance: <tspan fill="#FBBF24">'100/100 Core Web Vitals'</tspan>,</text>
+    <text x="50" y="240" font-family="monospace" font-size="12" fill="#94A3B8">    security: <tspan fill="#34D399">'Enterprise Grade SSL'</tspan>,</text>
+    <text x="50" y="265" font-family="monospace" font-size="12" fill="#94A3B8">    uptime: <tspan fill="#34D399">'99.99%'</tspan></text>
+    <text x="35" y="290" font-family="monospace" font-size="12" fill="#F8FAFC">  });</text>
+    <text x="35" y="325" font-family="monospace" font-size="12" fill="#818CF8">  return <tspan fill="#F8FAFC">&lt;<tspan fill="#38BDF8">AccelerateBusinessGrowth</tspan>&gt;</tspan></text>
+    <text x="50" y="350" font-family="monospace" font-size="12" fill="#94A3B8">    &lt;<tspan fill="#60A5FA">BuildHighPerformanceWebApps</tspan> /&gt;</text>
+    <text x="35" y="375" font-family="monospace" font-size="12" fill="#F8FAFC">  &lt;/<tspan fill="#38BDF8">AccelerateBusinessGrowth</tspan>&gt;;</text>
+    <text x="20" y="400" font-family="monospace" font-size="12" fill="#818CF8">}</text>
+  </g>
+
+  <!-- Right: Live Interactive SaaS Preview -->
+  <g transform="translate(410, 55)">
+    <rect x="0" y="0" width="370" height="420" rx="8" fill="#0A1E38" stroke="#163A66" stroke-width="1"/>
+    
+    <!-- Hero Glowing Graphic inside preview -->
+    <circle cx="280" cy="100" r="80" fill="#0B84F3" opacity="0.25" filter="url(#glow)"/>
+    <circle cx="100" cy="300" r="70" fill="#38BDF8" opacity="0.15" filter="url(#glow)"/>
+
+    <!-- Mini Header -->
+    <rect x="15" y="15" width="40" height="12" rx="3" fill="#0B84F3" />
+    <rect x="180" y="15" width="30" height="8" rx="2" fill="#64748B" opacity="0.5"/>
+    <rect x="220" y="15" width="30" height="8" rx="2" fill="#64748B" opacity="0.5"/>
+    <rect x="260" y="15" width="30" height="8" rx="2" fill="#64748B" opacity="0.5"/>
+    <rect x="305" y="12" width="50" height="18" rx="9" fill="#0B84F3" />
+
+    <!-- Big Typography: Build Innovate Grow -->
+    <text x="30" y="110" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800" letter-spacing="-1">Build</text>
+    <text x="30" y="148" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800" letter-spacing="-1" font-style="italic">Innovate</text>
+    <text x="30" y="186" fill="#0B84F3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800" letter-spacing="-1">Grow</text>
+
+    <!-- Interactive Card Mockup -->
+    <g transform="translate(25, 220)">
+      <rect width="320" height="85" rx="8" fill="#051326" stroke="#1E4976" stroke-width="1" />
+      <circle cx="35" cy="42" r="16" fill="#0B84F3" fill-opacity="0.2" />
+      <path d="M29 42l4 4 8-8" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="65" y="36" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600">Enterprise Ready Architecture</text>
+      <text x="65" y="56" fill="#94A3B8" font-family="sans-serif" font-size="11">Scalable, secure, and built for speed.</text>
+      <rect x="250" y="32" width="55" height="22" rx="4" fill="#0B84F3" />
+      <text x="277" y="47" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">Deploy</text>
+    </g>
+
+    <!-- Analytics Mini Cards -->
+    <g transform="translate(25, 320)">
+      <rect width="150" height="75" rx="8" fill="#051326" stroke="#1E4976" stroke-width="1"/>
+      <text x="15" y="25" fill="#64748B" font-family="sans-serif" font-size="10">PAGE SPEED</text>
+      <text x="15" y="55" fill="#34D399" font-family="sans-serif" font-size="22" font-weight="700">0.8s</text>
+      <text x="65" y="55" fill="#10B981" font-family="sans-serif" font-size="10">⚡ 100/100</text>
+    </g>
+
+    <g transform="translate(195, 320)">
+      <rect width="150" height="75" rx="8" fill="#051326" stroke="#1E4976" stroke-width="1"/>
+      <text x="15" y="25" fill="#64748B" font-family="sans-serif" font-size="10">CONVERSION</text>
+      <text x="15" y="55" fill="#38BDF8" font-family="sans-serif" font-size="22" font-weight="700">+142%</text>
+      <text x="105" y="55" fill="#38BDF8" font-family="sans-serif" font-size="10">📈 Real-time</text>
+    </g>
+  </g>
+</svg>
