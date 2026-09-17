@@ -45,29 +45,32 @@ export default function PortfolioPage() {
       {/* ──────────────────────────────────────────────
           1. HERO SECTION (Dark Navy — Matches Site Theme)
           ────────────────────────────────────────────── */}
-      <section className="relative bg-[#060E1A] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        {/* Ambient Gradient Glows */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-[#0066FF]/15 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute -bottom-10 right-10 w-[450px] h-[350px] bg-[#00D8FF]/10 blur-[120px] rounded-full pointer-events-none" />
-
-        {/* Subtle Grid Pattern Overlay */}
+      <section className="relative min-h-[70vh] flex items-center bg-[#EAF2F8] text-[#0B1220] overflow-hidden">
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center opacity-75"
+          style={{ backgroundImage: "url('/images/projects/technosky.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/82 to-white/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/20" />
+        <div className="absolute -right-20 top-20 w-[520px] h-[520px] rounded-full border border-[#94A3B8]/30 opacity-60" />
+        <div className="absolute -right-5 top-35 w-[390px] h-[390px] rounded-full border border-[#60A5FA]/30 opacity-60" />
+
+        <div
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px',
+            backgroundImage: `linear-gradient(rgba(11,18,32,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(11,18,32,0.08) 1px, transparent 1px)`,
+            backgroundSize: '72px 72px',
           }}
         />
 
-        <div className="container-main relative z-10 text-center max-w-4xl mx-auto">
-          {/* Breadcrumb / Eyebrow Pill */}
+        <div className="container-main relative z-10 py-32 md:py-40">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/[0.08] text-[#60A5FA] border border-white/[0.12] mb-6 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-[#0066FF] uppercase mb-6"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#60A5FA]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
             <span>PORTFOLIO &amp; PRODUCTION WORK</span>
           </motion.div>
 
@@ -76,10 +79,10 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.12]"
+            className="max-w-3xl text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold tracking-tight leading-[1.03] text-[#0B1220]"
           >
             Proven Results &amp;{' '}
-            <span className="bg-gradient-to-r from-[#60A5FA] via-[#38BDF8] to-[#0066FF] bg-clip-text text-transparent">
+            <span className="text-[#0066FF]">
               Featured Projects
             </span>
           </motion.h1>
@@ -89,33 +92,32 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-base sm:text-lg text-white/60 leading-relaxed max-w-2xl mx-auto"
+            className="mt-7 text-base sm:text-lg text-[#475569] leading-relaxed max-w-2xl"
           >
             Explore our curated showcase of high-converting e-commerce platforms, mission-critical custom web systems, and modern corporate websites built for high-growth businesses.
           </motion.p>
 
-          {/* Metrics Row */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-14 pt-10 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+            className="mt-12 max-w-3xl rounded-2xl border border-[#CBD5E1] bg-white/65 backdrop-blur-md p-5 sm:p-6 grid grid-cols-2 md:grid-cols-4 gap-5 shadow-[0_20px_60px_rgba(11,18,32,0.1)]"
           >
             <div>
-              <div className="text-3xl font-heading font-extrabold text-[#60A5FA]">100%</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">On-Time Launch Rate</div>
+              <div className="text-2xl sm:text-3xl font-heading font-extrabold text-[#0066FF]">100%</div>
+              <div className="text-[11px] text-[#64748B] mt-1 font-medium">On-Time Launch Rate</div>
             </div>
             <div>
-              <div className="text-3xl font-heading font-extrabold text-emerald-400">&lt; 0.8s</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">Avg Page Load Speed</div>
+              <div className="text-2xl sm:text-3xl font-heading font-extrabold text-emerald-300">&lt; 0.8s</div>
+              <div className="text-[11px] text-[#64748B] mt-1 font-medium">Avg Page Load Speed</div>
             </div>
             <div>
-              <div className="text-3xl font-heading font-extrabold text-white">+140%</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">Avg Conversion Lift</div>
+              <div className="text-2xl sm:text-3xl font-heading font-extrabold text-[#0B1220]">+140%</div>
+              <div className="text-[11px] text-[#64748B] mt-1 font-medium">Avg Conversion Lift</div>
             </div>
             <div>
-              <div className="text-3xl font-heading font-extrabold text-white">45+</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">Production Launches</div>
+              <div className="text-2xl sm:text-3xl font-heading font-extrabold text-[#0B1220]">45+</div>
+              <div className="text-[11px] text-[#64748B] mt-1 font-medium">Production Launches</div>
             </div>
           </motion.div>
         </div>

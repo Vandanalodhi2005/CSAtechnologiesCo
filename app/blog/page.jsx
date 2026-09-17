@@ -53,27 +53,23 @@ export default function BlogPage() {
       {/* ──────────────────────────────────────────────
           1. HERO SECTION (Dark Navy with Background Image & Glow)
           ────────────────────────────────────────────── */}
-      <section className="relative bg-[#060E1A] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        {/* Background Image overlay with dark fade */}
+      <section className="relative min-h-[70vh] flex items-center bg-[#EAF2F8] text-[#0B1220] overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 pointer-events-none"
-          style={{ backgroundImage: "url('/images/projects/technosky.jpg')" }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 pointer-events-none"
+          style={{ backgroundImage: "url('/images/hero/hero2.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060E1A]/80 via-[#060E1A]/95 to-[#060E1A] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/82 to-white/35 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/20 pointer-events-none" />
 
-        {/* Ambient Radial Gradient Glows */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-[#0066FF]/20 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute -bottom-10 right-10 w-[450px] h-[350px] bg-[#00D8FF]/15 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="container-main relative z-10 text-center max-w-4xl mx-auto">
+        <div className="container-main relative z-10 py-32 md:py-40 max-w-5xl">
           {/* Eyebrow Pill */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/[0.08] text-[#60A5FA] border border-white/[0.12] mb-6 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-[#0066FF] uppercase mb-6"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#60A5FA]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
             <span>KNOWLEDGE BASE &amp; TECH INSIGHTS</span>
           </motion.div>
 
@@ -82,7 +78,7 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.12]"
+            className="max-w-3xl text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold tracking-tight leading-[1.04]"
           >
             Engineering Insights &amp;{' '}
             <span className="bg-gradient-to-r from-[#60A5FA] via-[#38BDF8] to-[#0066FF] bg-clip-text text-transparent">
@@ -95,7 +91,7 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-base sm:text-lg text-white/65 leading-relaxed max-w-2xl mx-auto"
+            className="mt-6 text-base sm:text-lg text-[#475569] leading-relaxed max-w-2xl"
           >
             Deep-dives into modern Next.js 14 App Router, sub-second performance tuning, headless e-commerce optimization, and full-stack software architecture written by practitioners.
           </motion.p>

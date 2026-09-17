@@ -62,40 +62,45 @@ export default function Testimonials() {
         </div>
 
         {/* Desktop: 3-card grid */}
-        <div className="hidden md:grid grid-cols-3 gap-5">
+        <div className="hidden md:block">
           <AnimatePresence mode="wait">
-            {visible.map((t, i) => (
-              <motion.div
-                key={`${page}-${t.id}`}
-                className="flex flex-col p-7 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-300"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ delay: i * 0.08, duration: 0.4 }}
-              >
-                {/* Quote */}
-                <p className="text-[15px] text-white/55 leading-relaxed flex-1 mb-8 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
+            <motion.div
+              key={`desktop-${page}`}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.35 }}
+              className="grid grid-cols-3 gap-5"
+            >
+              {visible.map((t) => (
+                <div
+                  key={t.id}
+                  className="flex flex-col p-7 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-300"
+                >
+                  {/* Quote */}
+                  <p className="text-[15px] text-white/55 leading-relaxed flex-1 mb-8 italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
 
-                {/* Author */}
-                <div className="flex items-center gap-3.5 pt-5 border-t border-white/[0.06]">
-                  <div
-                    className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.avatarBg} flex items-center justify-center text-white text-xs font-bold shadow-lg`}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="text-sm font-heading font-bold text-white">
-                      {t.author}
-                    </p>
-                    <p className="text-xs text-white/35">
-                      {t.role}, {t.company}
-                    </p>
+                  {/* Author */}
+                  <div className="flex items-center gap-3.5 pt-5 border-t border-white/[0.06]">
+                    <div
+                      className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.avatarBg} flex items-center justify-center text-white text-xs font-bold shadow-lg`}
+                    >
+                      {t.initials}
+                    </div>
+                    <div>
+                      <p className="text-sm font-heading font-bold text-white">
+                        {t.author}
+                      </p>
+                      <p className="text-xs text-white/35">
+                        {t.role}, {t.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </AnimatePresence>
         </div>
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ShieldCheck } from 'lucide-react';
 
 export const metadata = {
   title: 'Privacy Policy | CSA Technologies CO',
@@ -8,8 +8,28 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-white min-h-screen pt-24 pb-20">
-      <div className="container-main max-w-3xl">
+    <div className="bg-[#F8FAFD] min-h-screen pb-20">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden border-b border-[#E2E8F0] bg-[#EAF2F8] py-24 md:py-32">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-55"
+          style={{ backgroundImage: "url('/images/hero/hero-laptop.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/45" />
+        <div className="container-main relative z-10 max-w-5xl">
+          <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#0066FF] uppercase mb-5">
+            <ShieldCheck className="w-4 h-4" />
+            Trust &amp; Data Protection
+          </div>
+          <h1 className="max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-[#0B1220] tracking-tight leading-[1.05]">
+            Privacy built into every client relationship.
+          </h1>
+          <p className="mt-5 max-w-2xl text-base sm:text-lg text-[#475569] leading-relaxed">
+            How CSA Technologies CO collects, uses, and protects the information you share with us.
+          </p>
+        </div>
+      </section>
+
+      <div className="container-main max-w-3xl pt-12 md:pt-16">
         <Link
           href="/"
           className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-blue hover:underline mb-8"
@@ -62,8 +82,8 @@ export default function PrivacyPolicyPage() {
           </h2>
           <p>
             If you have questions regarding this Privacy Policy, please contact our privacy officer at{' '}
-            <a href="mailto:hello@csatechnologies.co" className="text-brand-blue font-semibold hover:underline">
-              hello@csatechnologies.co
+            <a href="mailto:info@csatechnologiesco.com" className="text-brand-blue font-semibold hover:underline">
+              info@csatechnologiesco.com
             </a>.
           </p>
         </div>

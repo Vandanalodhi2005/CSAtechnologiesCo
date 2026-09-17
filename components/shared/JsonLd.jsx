@@ -16,12 +16,13 @@ export function OrganizationSchema() {
     logo: 'https://csatechnologies.co/logo/csa-logo.svg',
     description:
       'CSA Technologies CO builds modern business websites, e-commerce platforms and custom web applications for growing businesses.',
-    email: 'hello@csatechnologies.co',
-    telephone: '+91-98765-43210',
+    email: 'info@csatechnologiesco.com',
+    telephone: '+91-92112-93383',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Noida',
       addressRegion: 'Uttar Pradesh',
+      streetAddress: 'E-22B, 4th Floor, Sector 8',
       addressCountry: 'IN',
     },
     sameAs: [
@@ -72,12 +73,13 @@ export function LocalBusinessSchema() {
     '@type': 'ProfessionalService',
     name: 'CSA Technologies CO',
     url: 'https://csatechnologies.co',
-    telephone: '+91-98765-43210',
-    email: 'hello@csatechnologies.co',
+    telephone: '+91-92112-93383',
+    email: 'info@csatechnologiesco.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Noida',
       addressRegion: 'Uttar Pradesh',
+      streetAddress: 'E-22B, 4th Floor, Sector 8',
       addressCountry: 'IN',
     },
     priceRange: '₹₹',

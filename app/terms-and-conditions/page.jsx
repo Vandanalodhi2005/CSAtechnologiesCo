@@ -62,8 +62,8 @@ export default function TermsAndConditionsPage() {
           </h2>
           <p>
             For any legal or contractual inquiries, please contact our legal counsel at{' '}
-            <a href="mailto:hello@csatechnologies.co" className="text-brand-blue font-semibold hover:underline">
-              hello@csatechnologies.co
+            <a href="mailto:info@csatechnologiesco.com" className="text-brand-blue font-semibold hover:underline">
+              info@csatechnologiesco.com
             </a>.
           </p>
         </div>

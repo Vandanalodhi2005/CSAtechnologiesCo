@@ -159,11 +159,11 @@ export default function Navbar() {
                 <div className="mt-auto pt-8 border-t border-white/[0.08] text-xs text-white/50 space-y-2">
                   <div className="flex items-center gap-2">
                     <Mail className="w-3.5 h-3.5 text-[#0066FF]" />
-                    <span>hello@csatechco.com</span>
+                    <span>info@csatechnologiesco.com</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="w-3.5 h-3.5 text-[#0066FF]" />
-                    <span>+91 98765 43210</span>
+                    <span>+91 92112 93383</span>
                   </div>
                 </div>
               </div>

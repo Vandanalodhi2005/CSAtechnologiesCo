@@ -39,6 +39,7 @@ export default function ContactForm({ dark = false, initialService = '', initial
   });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [errorMessage, setErrorMessage] = useState('');
 
   const validate = () => {
     const errs = {};
@@ -73,20 +74,27 @@ export default function ContactForm({ dark = false, initialService = '', initial
       return;
     }
     setStatus('sending');
+    setErrorMessage('');
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('Network response was not ok');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || 'Network response was not ok');
+      }
       setStatus('success');
       setForm(initialState);
     } catch (err) {
       console.error(err);
       setStatus('error');
+      setErrorMessage(err.message || 'Something went wrong. Please try again.');
     }
-    setTimeout(() => setStatus('idle'), 5000);
+    setTimeout(() => {
+      setStatus((current) => (current === 'error' ? 'idle' : current));
+    }, 8000);
   };
 
   const inputBase = dark
@@ -98,8 +106,8 @@ export default function ContactForm({ dark = false, initialService = '', initial
 
   if (status === 'success') {
     return (
-      <div className={`flex flex-col items-center justify-center py-16 px-6 rounded-xl text-center ${dark ? 'bg-brand-navy-card' : 'bg-brand-light-bg'}`}>
-        <CheckCircle className="w-14 h-14 text-emerald-500 mb-4" />
+      <div className={`flex flex-col items-center justify-center py-10 px-6 rounded-xl text-center ${dark ? 'bg-brand-navy-card' : 'bg-brand-light-bg'}`}>
+        <CheckCircle className="w-14 h-10 text-emerald-500 mb-4" />
         <h3 className={`text-xl font-heading font-bold mb-2 ${dark ? 'text-white' : 'text-brand-text-dark'}`}>
           Inquiry Sent Successfully!
         </h3>
@@ -172,7 +180,7 @@ export default function ContactForm({ dark = false, initialService = '', initial
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            placeholder="+91 98765 43210"
+            placeholder="+91 92112 93383"
             className={`w-full px-4 py-2.5 rounded-lg border text-sm transition-colors outline-none ${inputBase}`}
           />
         </div>
@@ -254,9 +262,9 @@ export default function ContactForm({ dark = false, initialService = '', initial
       </Button>
 
       {status === 'error' && (
-        <div className="flex items-center gap-2 text-red-500 text-sm">
-          <AlertCircle className="w-4 h-4" />
-          Something went wrong. Please try again.
+        <div className="flex items-start gap-2.5 p-3.5 bg-red-500/10 border border-red-500/25 rounded-lg text-red-500 text-xs sm:text-sm leading-relaxed">
+          <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+          <span>{errorMessage || 'Something went wrong. Please try again.'}</span>
         </div>
       )}
     </form>

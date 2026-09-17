@@ -76,23 +76,23 @@ export default function Footer() {
                   <div className="w-7 h-7 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-[#60A5FA]">
                     <Mail className="w-3.5 h-3.5" />
                   </div>
-                  <a href="mailto:hello@csatechco.com" className="hover:text-white transition-colors">
-                    hello@csatechco.com
+                  <a href="mailto:info@csatechnologiesco.com" className="hover:text-white transition-colors">
+                    info@csatechnologiesco.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-[#60A5FA]">
                     <Phone className="w-3.5 h-3.5" />
                   </div>
-                  <a href="tel:+919876543210" className="hover:text-white transition-colors">
-                    +91 98765 43210
+                  <a href="tel:+919211293383" className="hover:text-white transition-colors">
+                    +91 92112 93383
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-[#60A5FA]">
                     <MapPin className="w-3.5 h-3.5" />
                   </div>
-                  <span>Noida, Uttar Pradesh, India</span>
+                  <span>E-22B, 4th Floor, Sector 8, Noida</span>
                 </div>
               </div>
             </div>

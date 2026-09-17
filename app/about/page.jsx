@@ -64,37 +64,46 @@ const ENGINEERING_STANDARDS = [
 
 const LEADERSHIP = [
   {
-    name: 'Chandan Kumar',
-    role: 'Founder & Principal Architect',
-    bio: 'Oversees software architecture, technical feasibility, and high-concurrency systems. Over 8+ years specializing in Next.js, Node.js microservices, and distributed cloud systems.',
-    initials: 'CK',
-    bg: 'from-blue-600 to-indigo-700',
-    specialty: 'Distributed Systems & Cloud Architecture',
+    name: 'Vandana Rajpoot',
+    role: 'Co-Founder & CTO',
+    bio: 'Leads the technical direction of CSA Technologies CO, turning business requirements into secure, scalable products and dependable engineering systems.',
+    initials: 'VR',
+    bg: 'from-blue-600 to-cyan-500',
+    specialty: 'Technology Strategy & Product Architecture',
   },
   {
-    name: 'Vandana Lodhi',
-    role: 'Lead UI/UX Designer & Product Strategist',
-    bio: 'Crafts conversion-focused user experiences, design systems, and modern digital interfaces. Passionate about fluid micro-animations, design tokens, and accessibility-first typography.',
-    initials: 'VL',
+    name: 'Santosh Upadhyay',
+    role: 'Co-Founder',
+    bio: 'Shapes the company vision and client partnerships, helping growing businesses choose practical digital solutions that create lasting value.',
+    initials: 'SU',
     bg: 'from-sky-500 to-blue-600',
-    specialty: 'UI/UX Design Systems & Motion',
+    specialty: 'Business Growth & Client Partnerships',
   },
   {
-    name: 'Amit Patel',
-    role: 'Senior Full-Stack & Cloud Engineer',
-    bio: 'Specializes in database schema modeling, GraphQL/REST APIs, AWS cloud infrastructure, and mission-critical telemetry pipelines for high-traffic platforms.',
-    initials: 'AP',
+    name: 'Dhirendra K.',
+    role: 'Director',
+    bio: 'Supports strategic planning and operational excellence, keeping delivery focused, transparent, and aligned with each client’s long-term goals.',
+    initials: 'DK',
     bg: 'from-cyan-600 to-blue-800',
-    specialty: 'Backend Microservices & Databases',
+    specialty: 'Operations & Strategic Direction',
   },
-  {
-    name: 'Priya Singh',
-    role: 'Frontend & Mobile Engineer',
-    bio: 'Expert in React, Next.js App Router, and cross-platform React Native development. Focuses on seamless 60fps animations and offline-first state synchronization.',
-    initials: 'PS',
-    bg: 'from-indigo-500 to-purple-700',
-    specialty: 'Next.js App Router & React Native',
-  },
+];
+
+const SERVICE_CARDS = [
+  { title: 'Website Development', desc: 'Responsive, SEO-friendly websites that establish your brand and turn attention into action.', image: '/images/hero/hero.jpg', icon: Globe2 },
+  { title: 'E-Commerce Development', desc: 'Secure, scalable stores with product management, checkout, payments, and order workflows.', image: '/images/hero/hero-laptop.jpg', icon: Layers },
+  { title: 'Web & Mobile Apps', desc: 'Purpose-built digital products shaped around your users, data, and everyday operations.', image: '/images/hero/hero2.jpg', icon: Code2 },
+  { title: 'CRM & Custom Software', desc: 'Connected systems for leads, teams, reporting, automation, and the work that makes your business move.', image: '/images/hero/hero3.png', icon: Users },
+];
+
+const PROCESS_STEPS = [
+  ['01', 'Discover', 'We understand your business, users, goals, challenges, and requirements.'],
+  ['02', 'Plan', 'We define scope, architecture, technology, timeline, and the delivery roadmap.'],
+  ['03', 'Design', 'We create intuitive interfaces focused on usability, identity, and responsive experiences.'],
+  ['04', 'Develop', 'We build the frontend, backend, database, APIs, integrations, and core functionality.'],
+  ['05', 'Test & Secure', 'We test functionality, responsiveness, performance, permissions, and security controls.'],
+  ['06', 'Launch', 'We deploy the finished product and help establish a reliable production environment.'],
+  ['07', 'Support & Improve', 'We continue maintaining, optimizing, and expanding the product as your business evolves.'],
 ];
 
 const MILESTONES = [
@@ -131,28 +140,22 @@ export default function AboutPage() {
       {/* ──────────────────────────────────────────────
           1. HERO SECTION (Dark Navy with Background Image & Radial Glow)
           ────────────────────────────────────────────── */}
-      <section className="relative bg-[#060E1A] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        {/* Real photo background overlay with fade */}
+      <section className="relative min-h-[70vh] flex items-center bg-[#EAF2F8] text-[#0B1220] overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 pointer-events-none"
-          style={{ backgroundImage: "url('/images/why-choose-bg.jpg')" }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75"
+          style={{ backgroundImage: "url('/images/hero/hero2.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060E1A]/80 via-[#060E1A]/95 to-[#060E1A] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/82 to-white/35 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/20 pointer-events-none" />
 
-        {/* Ambient Radial Gradient Glows */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-[#0066FF]/20 blur-[160px] rounded-full pointer-events-none" />
-        <div className="absolute -bottom-10 right-10 w-[450px] h-[350px] bg-[#00D8FF]/15 blur-[130px] rounded-full pointer-events-none" />
-
-        <div className="container-main relative z-10 text-center max-w-4xl mx-auto">
-          {/* Eyebrow Pill */}
+        <div className="container-main relative z-10 py-32 md:py-40">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/[0.08] text-[#60A5FA] border border-white/[0.12] mb-6 backdrop-blur-sm"
+            className="text-sm font-semibold tracking-[0.2em] text-[#0066FF] uppercase mb-6"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#60A5FA]" />
-            <span>ABOUT CSA TECHNOLOGIES CO • OUR PHILOSOPHY</span>
+            CSA Technologies CO
           </motion.div>
 
           {/* Heading */}
@@ -160,12 +163,9 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.12]"
+            className="max-w-3xl text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold tracking-tight leading-[1.05] text-[#0B1220]"
           >
-            Architecting Modern Software for{' '}
-            <span className="bg-gradient-to-r from-[#60A5FA] via-[#38BDF8] to-[#0066FF] bg-clip-text text-transparent">
-              Ambitious Businesses
-            </span>
+            Building Digital Solutions That Move Businesses Forward
           </motion.h1>
 
           {/* Subtitle */}
@@ -173,9 +173,9 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-base sm:text-lg text-white/65 leading-relaxed max-w-2xl mx-auto"
+            className="mt-7 text-base sm:text-lg text-[#475569] leading-relaxed max-w-2xl"
           >
-            We are a full-stack digital engineering studio dedicated to building lightning-fast web applications, high-converting e-commerce platforms, and scalable cloud architectures that accelerate real growth.
+            Modern websites, e-commerce platforms, web applications, mobile apps, CRM systems, and custom software built for real business growth.
           </motion.p>
 
           {/* Buttons */}
@@ -183,7 +183,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-9 flex flex-wrap items-center justify-center gap-4"
+            className="mt-9 flex flex-wrap items-center gap-4"
           >
             <Link
               href="/contact"
@@ -192,12 +192,7 @@ export default function AboutPage() {
               <span>Start Your Project</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
-            <a
-              href="#values"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 text-white text-sm font-semibold transition-all duration-300"
-            >
-              <span>Explore Our Values</span>
-            </a>
+            <a href="#values" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/70 hover:bg-white border border-[#CBD5E1] text-[#334155] text-sm font-semibold transition-all duration-300">Explore Our Values</a>
           </motion.div>
 
           {/* Value Stats Grid */}
@@ -205,24 +200,13 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-14 pt-10 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+            className="mt-12 pt-6 border-t border-[#CBD5E1] flex flex-col sm:flex-row gap-3 sm:gap-8 text-sm text-[#475569]"
           >
-            <div>
-              <div className="text-3xl font-heading font-extrabold text-[#60A5FA]">2021</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">Established &amp; Growing</div>
-            </div>
-            <div>
-              <div className="text-3xl font-heading font-extrabold text-white">45+</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">Production Platforms</div>
-            </div>
-            <div>
-              <div className="text-3xl font-heading font-extrabold text-emerald-400">99.9%</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">Uptime Guarantee</div>
-            </div>
-            <div>
-              <div className="text-3xl font-heading font-extrabold text-white">100%</div>
-              <div className="text-xs text-white/50 mt-1 font-medium">Code &amp; IP Ownership</div>
-            </div>
+            <span>E-22B, 4th Floor, Sector 8, Noida</span>
+            <span className="hidden sm:inline text-[#94A3B8]">|</span>
+            <a href="tel:+919211293383" className="hover:text-[#0066FF] transition-colors">+91 92112 93383</a>
+            <span className="hidden sm:inline text-[#94A3B8]">|</span>
+            <a href="mailto:info@csatechnologiesco.com" className="hover:text-[#0066FF] transition-colors">info@csatechnologiesco.com</a>
           </motion.div>
         </div>
       </section>
@@ -315,7 +299,117 @@ export default function AboutPage() {
       </section>
 
       {/* ──────────────────────────────────────────────
-          3. CORE VALUES SECTION (Light #F8FAFD)
+          3. WHAT WE DO (Image Cards)
+          ────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[#F8FAFD]">
+        <div className="container-main">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div className="max-w-2xl">
+              <span className="text-xs font-bold tracking-[0.18em] text-[#0066FF] uppercase mb-2.5 block">WHAT WE DO</span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#0B1220] tracking-tight mb-3">Digital Products Built Around Your Business</h2>
+              <p className="text-[15px] text-[#64748B] leading-relaxed">From your first website to the systems that power your next stage of growth, we make technology practical, reliable, and easy to manage.</p>
+            </div>
+            <Link href="/services" className="inline-flex items-center gap-2 text-sm font-bold text-[#0066FF] hover:text-[#0052CC] transition-colors">Explore services <ArrowRight className="w-4 h-4" /></Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {SERVICE_CARDS.map((service, idx) => (
+              <motion.article
+                key={service.title}
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: idx * 0.08, duration: 0.45 }}
+                className="group overflow-hidden rounded-2xl bg-white border border-[#E2E8F0] shadow-sm hover:shadow-[0_14px_35px_rgba(11,132,243,0.12)] hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="relative h-36 overflow-hidden">
+                  <img src={service.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#061426]/75 to-transparent" />
+                  <div className="absolute bottom-4 left-4 w-9 h-9 rounded-xl bg-white/90 text-[#0066FF] flex items-center justify-center"><service.icon className="w-4 h-4" /></div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-base font-heading font-extrabold text-[#0B1220] mb-2">{service.title}</h3>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{service.desc}</p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────────
+          4. TECHNOLOGY & PROCESS
+          ────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white border-b border-[#E2E8F0]">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <motion.div
+              initial={{ opacity: 0, x: -18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              className="lg:col-span-4"
+            >
+              <span className="text-xs font-bold tracking-[0.18em] text-[#0066FF] uppercase mb-2.5 block">OUR TECHNOLOGY</span>
+              <h2 className="text-3xl font-heading font-extrabold text-[#0B1220] tracking-tight mb-4">Modern Tools. Thoughtful Architecture.</h2>
+              <p className="text-sm text-[#64748B] leading-relaxed mb-6">We choose proven technologies that make products maintainable, secure, fast, and ready for the next stage of growth.</p>
+              <div className="rounded-2xl overflow-hidden h-48 relative">
+                <img src="/images/hero/hero-laptop.jpg" alt="Modern software development workspace" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#061426]/75 to-transparent" />
+                <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white text-xs font-bold"><Cpu className="w-4 h-4 text-[#60A5FA]" /> Built for the long term</div>
+              </div>
+            </motion.div>
+
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                ['Frontend', 'React.js, Next.js, JavaScript, HTML5, CSS3, Tailwind CSS', Code2],
+                ['Backend', 'Node.js, Express.js, REST APIs, authentication, and integrations', Layers],
+                ['Database', 'MongoDB and application-specific data solutions designed around your workflows', Globe2],
+                ['Security & Deployment', 'Vercel, cloud platforms, HTTPS, validation, rate limiting, and secure configuration', Shield],
+              ].map(([title, desc, Icon], idx) => (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ delay: idx * 0.08, duration: 0.4 }}
+                  className="p-6 rounded-2xl bg-[#F8FAFD] border border-[#E8ECF2] hover:border-[#0066FF]/30 hover:shadow-md transition-all"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#EFF6FF] text-[#0066FF] flex items-center justify-center mb-4"><Icon className="w-5 h-5" /></div>
+                  <h3 className="text-base font-heading font-bold text-[#0B1220] mb-2">{title}</h3>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-24">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="text-xs font-bold tracking-[0.18em] text-[#0066FF] uppercase mb-2.5 block">OUR DEVELOPMENT PROCESS</span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#0B1220] tracking-tight mb-3">From Idea to Launch and Beyond</h2>
+              <p className="text-[15px] text-[#64748B] leading-relaxed">A clear, collaborative process keeps decisions visible and progress moving.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {PROCESS_STEPS.map(([number, title, desc], idx) => (
+                <motion.div
+                  key={number}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ delay: idx * 0.06, duration: 0.35 }}
+                  className="relative p-5 rounded-2xl border border-[#E2E8F0] bg-white hover:border-[#0066FF]/35 hover:shadow-md transition-all"
+                >
+                  <span className="text-3xl font-heading font-extrabold text-[#DBEAFE]">{number}</span>
+                  <h3 className="text-sm font-heading font-extrabold text-[#0B1220] mt-3 mb-2">{title}</h3>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────────
+          5. CORE VALUES SECTION (Light #F8FAFD)
           ────────────────────────────────────────────── */}
       <section id="values" className="py-20 md:py-28 bg-[#F8FAFD]">
         <div className="container-main">
@@ -425,7 +519,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {LEADERSHIP.map((lead, idx) => (
               <motion.div
                 key={lead.name}
@@ -433,11 +527,12 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ delay: idx * 0.1, duration: 0.4 }}
-                className="bg-[#F8FAFD] rounded-2xl border border-[#E8ECF2] p-6 hover:border-[#0066FF]/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                className="group relative overflow-hidden bg-[#F8FAFD] rounded-2xl border border-[#E2E8F0] p-7 shadow-[0_8px_25px_rgba(11,18,32,0.06)] hover:-translate-y-1 hover:border-[#0066FF]/35 hover:shadow-[0_18px_40px_rgba(0,102,255,0.14)] transition-all duration-300 flex flex-col justify-between"
               >
+                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${lead.bg}`} />
                 <div>
                   <div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${lead.bg} flex items-center justify-center text-white text-lg font-bold shadow-md mb-5`}
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${lead.bg} flex items-center justify-center text-white text-lg font-bold shadow-[0_8px_18px_rgba(0,102,255,0.22)] mb-6 group-hover:scale-105 transition-transform duration-300`}
                   >
                     {lead.initials}
                   </div>
@@ -447,16 +542,16 @@ export default function AboutPage() {
                   <p className="text-xs font-semibold text-[#0066FF] mb-3">
                     {lead.role}
                   </p>
-                  <p className="text-xs text-[#64748B] leading-relaxed mb-5">
+                  <p className="text-sm text-[#64748B] leading-relaxed mb-6">
                     {lead.bio}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#E8ECF2]">
+                <div className="pt-4 border-t border-[#E2E8F0]">
                   <span className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider block mb-1">
                     Specialty:
                   </span>
-                  <span className="text-xs font-semibold text-[#334155]">
+                  <span className="text-xs font-bold text-[#334155] leading-relaxed">
                     {lead.specialty}
                   </span>
                 </div>
@@ -491,13 +586,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{ delay: idx * 0.08, duration: 0.35 }}
-                className="bg-white rounded-2xl border border-[#E2E8F0] p-6 flex flex-col sm:flex-row sm:items-center gap-5 hover:border-[#0066FF]/30 hover:shadow-sm transition-all"
+                className="group relative bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center gap-5 shadow-[0_8px_24px_rgba(11,18,32,0.05)] hover:-translate-y-0.5 hover:border-[#0066FF]/35 hover:shadow-[0_16px_34px_rgba(0,102,255,0.12)] transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-xl bg-[#EFF6FF] border border-[#DBEAFE] text-[#0066FF] flex items-center justify-center text-xl font-heading font-extrabold flex-shrink-0">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#EFF6FF] to-[#DBEAFE] border border-[#BFDBFE] text-[#0066FF] flex items-center justify-center text-xl font-heading font-extrabold flex-shrink-0 shadow-inner group-hover:from-[#DBEAFE] group-hover:to-[#BFDBFE] transition-colors">
                   {m.year}
                 </div>
                 <div>
-                  <h3 className="text-base font-heading font-bold text-[#0B1220] mb-1">
+                  <h3 className="text-lg font-heading font-extrabold text-[#0B1220] mb-1">
                     {m.title}
                   </h3>
                   <p className="text-xs text-[#64748B] leading-relaxed">

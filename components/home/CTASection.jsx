@@ -66,10 +66,10 @@ export default function CTASection() {
                 <div>
                   <p className="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider mb-0.5">Email</p>
                   <a
-                    href="mailto:hello@csatechco.com"
+                    href="mailto:info@csatechnologiesco.com"
                     className="text-[15px] font-semibold text-[#0B1220] hover:text-[#0066FF] transition-colors"
                   >
-                    hello@csatechco.com
+                    info@csatechnologiesco.com
                   </a>
                 </div>
               </div>
@@ -82,10 +82,10 @@ export default function CTASection() {
                 <div>
                   <p className="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider mb-0.5">Phone</p>
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919211293383"
                     className="text-[15px] font-semibold text-[#0B1220] hover:text-[#0066FF] transition-colors"
                   >
-                    +91 98765 43210
+                    +91 92112 93383
                   </a>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function CTASection() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider mb-0.5">Location</p>
-                  <p className="text-[15px] font-semibold text-[#0B1220]">Noida, Uttar Pradesh, India</p>
+                  <p className="text-[15px] font-semibold text-[#0B1220]">E-22B, 4th Floor, Sector 8, Noida</p>
                 </div>
               </div>
             </div>
