@@ -39,14 +39,6 @@ const SERVICE_LINKS = [
   { name: 'Maintenance & 24/7 SLAs', href: '/services#maintenance' },
 ];
 
-const FEATURED_PROJECTS = [
-  { name: 'Prints Carts Storefront', href: '/portfolio/printscarts' },
-  { name: 'TechnoSky Cloud Portal', href: '/portfolio/technosky' },
-  { name: 'SmartEprint Platform', href: '/portfolio/smarteprint' },
-  { name: 'Driver Info Hub Hub', href: '/portfolio/driverinfohub' },
-  { name: 'Innovation Dynamics Group', href: '/portfolio/innovationdynamicsgroup' },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-[#060E1A] text-white border-t border-white/[0.08] relative overflow-hidden" role="contentinfo">
@@ -148,27 +140,6 @@ export default function Footer() {
                     className="text-xs sm:text-sm text-white/55 hover:text-white hover:translate-x-1 inline-flex items-center transition-all duration-200"
                   >
                     {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Column 4: Featured Projects ── */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-white mb-5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-              <span>Case Studies</span>
-            </h3>
-            <ul className="space-y-3">
-              {FEATURED_PROJECTS.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-xs sm:text-sm text-white/55 hover:text-white hover:translate-x-1 inline-flex items-center gap-1 transition-all duration-200"
-                  >
-                    <span>{link.name}</span>
-                    <ArrowUpRight className="w-3 h-3 text-white/30" />
                   </Link>
                 </li>
               ))}

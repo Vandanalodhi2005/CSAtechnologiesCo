@@ -1,9 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PROJECTS } from '@/data/projects';
 
 export default function FeaturedProjects() {
@@ -51,13 +50,6 @@ export default function FeaturedProjects() {
               clients across industries build their digital presence.
             </p>
           </div>
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1F1D1A] hover:text-[#0066FF] transition-colors whitespace-nowrap group self-start md:self-end"
-          >
-            <span>View All Projects</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
         </div>
 
         <div
@@ -79,7 +71,7 @@ export default function FeaturedProjects() {
                   transition={{ duration: 0.45, ease: 'easeOut' }}
                   className={`${isActive ? 'w-full md:w-[28%] z-10' : 'hidden lg:block lg:w-[18%]'} flex-shrink-0`}
                 >
-                  <Link href={`/portfolio/${project.slug}`} className={`group relative flex min-h-[360px] md:min-h-[405px] h-full overflow-hidden rounded-[1.1rem] border border-black/20 shadow-[0_14px_28px_rgba(45,38,32,0.15)] transition-all duration-500 ${isActive ? 'md:min-h-[445px] shadow-[0_24px_55px_rgba(45,38,32,0.28)]' : ''}`}>
+                  <div className={`group relative flex min-h-[360px] md:min-h-[405px] h-full overflow-hidden rounded-[1.1rem] border border-black/20 shadow-[0_14px_28px_rgba(45,38,32,0.15)] transition-all duration-500 ${isActive ? 'md:min-h-[445px] shadow-[0_24px_55px_rgba(45,38,32,0.28)]' : ''}`}>
                     <img
                       src={project.image || `/images/projects/${project.slug}.jpg`}
                       alt={`${project.name} - ${project.category} by CSA Technologies CO`}
@@ -91,9 +83,8 @@ export default function FeaturedProjects() {
                       <p className={`text-[10px] font-bold tracking-[0.16em] uppercase mb-2 ${isActive ? 'text-white/75' : 'text-[#514B45]'}`}>{project.category}</p>
                       <h3 className="text-xl sm:text-2xl font-heading font-extrabold mb-2">{project.name}</h3>
                       {isActive && <p className="text-sm text-white/80 leading-relaxed line-clamp-2 mb-5">{project.shortDescription}</p>}
-                      <span className={`inline-flex items-center gap-2 text-xs font-bold ${isActive ? 'text-white' : 'text-[#3F3A35]'}`}>View project <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" /></span>
                     </div>
-                  </Link>
+                  </div>
                 </motion.div>
               );
             })}

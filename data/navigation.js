@@ -40,7 +40,7 @@ export const FOOTER_LINKS = {
   company: [
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Featured Work', href: '/portfolio' },
+    { name: 'Portfolio', href: '/portfolio' },
     { name: 'Our Process', href: '/process' },
     { name: 'Insights & Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
@@ -54,7 +54,6 @@ export const FOOTER_LINKS = {
     { name: 'Maintenance & Support', href: '/services#maintenance' },
   ],
   resources: [
-    { name: 'Case Studies', href: '/portfolio' },
     { name: 'Tech Insights Blog', href: '/blog' },
     { name: 'Project Calculator', href: '/contact#quote' },
     { name: 'Privacy Policy', href: '/privacy-policy' },

@@ -81,6 +81,8 @@ export default function Hero() {
               >
                 <span>View Our Work</span>
               </Link>
+
+
             </motion.div>
 
             {/* Tech Stack Icons Row */}
