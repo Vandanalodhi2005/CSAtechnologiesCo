@@ -1,6 +1,7 @@
 export const NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
+  { name: 'Courses', href: '/courses' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'About', href: '/about' },
   { name: 'Process', href: '/process' },
@@ -40,6 +41,7 @@ export const FOOTER_LINKS = {
   company: [
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Courses & Training', href: '/courses' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Our Process', href: '/process' },
     { name: 'Insights & Blog', href: '/blog' },

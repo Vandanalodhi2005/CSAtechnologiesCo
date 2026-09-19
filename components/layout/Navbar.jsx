@@ -10,6 +10,7 @@ import Logo from '@/components/shared/Logo';
 const NAV_ITEMS = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
+  // { name: 'Courses', href: '/courses' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
@@ -55,7 +56,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {NAV_ITEMS.map((link) => {
             const isActive =
               pathname === link.href ||
