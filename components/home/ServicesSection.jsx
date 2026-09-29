@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, ShoppingCart, Code2, Smartphone, Cloud, Cog, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Globe, ShoppingCart, Code2, Smartphone, Cloud, Cog, Gamepad2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SERVICES } from '@/data/services';
 
 const iconMap = {
@@ -13,6 +13,7 @@ const iconMap = {
   Smartphone,
   Cloud,
   Cog,
+  Gamepad2,
 };
 
 const serviceImages = [
@@ -22,6 +23,7 @@ const serviceImages = [
   '/images/hero/hero2.jpg',
   '/images/hero/hero-laptop.jpg',
   '/images/projects/smartprinthelp.jpg',
+  '/images/hero/hero3.png',
 ];
 
 export default function ServicesSection() {

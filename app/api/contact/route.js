@@ -13,9 +13,9 @@ export async function POST(request) {
       );
     }
 
-    const recipientEmail = 'vandanarajpoot69@gmail.com';
-    const emailUser = process.env.EMAIL_USER || 'vandanarajpoot69@gmail.com';
-    // Remove whitespace from Google App Passwords if pasted with spaces
+    const recipientEmail = process.env.CONTACT_RECIPIENT || 'vandanarajpoot69@gmail.com';
+    const emailUser = process.env.EMAIL_USER || recipientEmail;
+    // Google App Passwords are often copied with spaces between groups.
     const emailPass = (process.env.EMAIL_PASS || '').replace(/\s+/g, '');
 
     if (!emailPass) {
@@ -29,25 +29,16 @@ export async function POST(request) {
       );
     }
 
-    // Configure Nodemailer transporter
-    const transporterConfig =
-      process.env.SMTP_HOST && process.env.SMTP_HOST !== 'smtp.gmail.com'
-        ? {
-            host: process.env.SMTP_HOST,
-            port: Number(process.env.SMTP_PORT) || 587,
-            secure: Number(process.env.SMTP_PORT) === 465,
-            auth: {
-              user: emailUser,
-              pass: emailPass,
-            },
-          }
-        : {
-            service: 'gmail',
-            auth: {
-              user: emailUser,
-              pass: emailPass,
-            },
-          };
+    const smtpPort = Number(process.env.SMTP_PORT) || 587;
+    const transporterConfig = {
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: smtpPort,
+      secure: process.env.SMTP_SECURE === 'true' || smtpPort === 465,
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
+    };
 
     const transporter = nodemailer.createTransport(transporterConfig);
 

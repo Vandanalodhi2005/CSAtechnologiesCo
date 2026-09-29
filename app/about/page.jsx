@@ -298,6 +298,68 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="py-20 md:py-28 bg-[#F8FAFD] border-y border-[#E2E8F0]">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5 }}
+              className="max-w-lg w-full mx-auto lg:mx-0 overflow-hidden rounded-2xl bg-[#E2E8F0] aspect-[4/5] max-h-[600px]"
+            >
+              <img
+                src="/co-founder.jpeg"
+                alt="Vandana Rajpoot, Co-Founder and CTO of CSA Technologies CO"
+                className="w-full h-full object-cover object-center"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <span className="text-xs font-bold tracking-[0.18em] text-[#0066FF] uppercase mb-3 block">
+                MEET OUR CO-FOUNDER &amp; CTO
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#0B1220] tracking-tight mb-2">
+                Vandana Rajpoot
+              </h2>
+              <p className="text-sm font-semibold text-[#0066FF] mb-6">
+                Co-Founder &amp; Chief Technology Officer
+              </p>
+              <p className="text-[15px] text-[#475569] leading-relaxed mb-5">
+                With 5+ years of experience in software development, I lead the technical direction at CSA Technologies CO. I help turn business ideas into reliable digital products, from modern websites and e-commerce platforms to custom web applications.
+              </p>
+              <p className="text-[15px] text-[#475569] leading-relaxed mb-8">
+                My approach brings product thinking and practical engineering together, with a focus on performance, clear user experiences, and software that is built to grow with the business.
+              </p>
+
+              <div className="flex flex-wrap gap-x-8 gap-y-4 py-5 border-y border-[#CBD5E1] mb-7">
+                <div>
+                  <div className="text-2xl font-heading font-extrabold text-[#0066FF]">5+</div>
+                  <div className="text-xs text-[#64748B] mt-1 font-medium">Years in Software Development</div>
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-[#0B1220]">Web &amp; Product Engineering</div>
+                  <div className="text-xs text-[#64748B] mt-1 font-medium">Architecture, apps, and e-commerce</div>
+                </div>
+              </div>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#0066FF] hover:text-[#0052CC] transition-colors group"
+              >
+                Discuss your project
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ──────────────────────────────────────────────
           3. WHAT WE DO (Image Cards)
           ────────────────────────────────────────────── */}
@@ -531,11 +593,19 @@ export default function AboutPage() {
               >
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${lead.bg}`} />
                 <div>
-                  <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${lead.bg} flex items-center justify-center text-white text-lg font-bold shadow-[0_8px_18px_rgba(0,102,255,0.22)] mb-6 group-hover:scale-105 transition-transform duration-300`}
-                  >
-                    {lead.initials}
-                  </div>
+                  {lead.image ? (
+                    <img
+                      src={lead.image}
+                      alt={`${lead.name}, ${lead.role}`}
+                      className="w-16 h-16 rounded-2xl object-cover shadow-[0_8px_18px_rgba(0,102,255,0.22)] mb-6 group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${lead.bg} flex items-center justify-center text-white text-lg font-bold shadow-[0_8px_18px_rgba(0,102,255,0.22)] mb-6 group-hover:scale-105 transition-transform duration-300`}
+                    >
+                      {lead.initials}
+                    </div>
+                  )}
                   <h3 className="text-lg font-heading font-bold text-[#0B1220]">
                     {lead.name}
                   </h3>

@@ -10,6 +10,7 @@ import {
   Smartphone,
   Cloud,
   Cog,
+  Gamepad2,
   Check,
   ArrowRight,
   Sparkles,
@@ -35,6 +36,7 @@ const iconMap = {
   Smartphone,
   Cloud,
   Cog,
+  Gamepad2,
 };
 
 const DELIVERY_PROCESS = [

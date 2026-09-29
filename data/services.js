@@ -161,4 +161,31 @@ export const SERVICES = [
     ],
     pricingGuide: 'Starting from ₹15,000/mo flexible monthly retainers',
   },
+  {
+    id: 'interactive-simulators',
+    number: '07',
+    title: 'Interactive Simulators',
+    shortDescription: 'Immersive, interactive simulations for cars, motorcycles, drones, and custom experiences.',
+    tagline: 'Realistic Interactive Simulations Built Around Your Use Case',
+    icon: 'Gamepad2',
+    highlight: '3D & Real-Time',
+    description:
+      'We create interactive simulator experiences for vehicle driving, motorcycle riding, drone flight, training, product demonstrations, and other custom scenarios. From browser-based 3D experiences to immersive VR applications, each simulator is designed around your audience, controls, and required level of realism.',
+    deliverables: [
+      'Custom Car, Motorcycle, Drone, and Other Simulation Experiences',
+      'Interactive 3D Environments, Scenes, and Configurable Objects',
+      'Responsive Keyboard, Touch, and Controller Input Support',
+      'Real-Time Physics and Behavior Tuned to Project Requirements',
+      'Progress, Scoring, Training, and Scenario-Based Features',
+      'Web, Desktop, Mobile, or VR Deployment Options',
+      'Performance Optimization, Testing, and Deployment Support',
+    ],
+    techStack: ['Three.js', 'WebGL', 'React', 'Unity', 'WebXR', 'Node.js'],
+    benefits: [
+      'Give users a hands-on way to learn, explore, or practice safely',
+      'Adapt the experience for training, education, marketing, or entertainment',
+      'Reach audiences across browser, mobile, desktop, and immersive platforms',
+    ],
+    pricingGuide: 'Custom quote based on simulation complexity and platform',
+  },
 ];

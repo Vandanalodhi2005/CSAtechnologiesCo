@@ -36,9 +36,20 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    const desktopQuery = window.matchMedia('(min-width: 1024px)');
+    const closeOnDesktop = (event) => {
+      if (event.matches) setMobileOpen(false);
+    };
+
+    desktopQuery.addEventListener('change', closeOnDesktop);
+    return () => desktopQuery.removeEventListener('change', closeOnDesktop);
+  }, []);
+
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
@@ -104,74 +115,75 @@ export default function Navbar() {
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Mobile Navigation Drawer */}
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="fixed inset-0 top-0 bg-[#060E1A] z-40 lg:hidden"
-            >
-              <div className="flex flex-col pt-24 px-6 pb-8 h-full overflow-y-auto">
-                <div className="flex flex-col gap-1.5">
-                  {NAV_ITEMS.map((link, i) => {
-                    const isActive = pathname === link.href;
-                    return (
-                      <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, x: -16 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.04, duration: 0.25 }}
-                      >
-                        <Link
-                          href={link.href}
-                          onClick={closeMobile}
-                          className={`flex items-center justify-between py-3.5 px-4 text-base font-heading font-bold rounded-xl transition-all ${
-                            isActive
-                              ? 'text-white bg-white/[0.08] border border-white/[0.08]'
-                              : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
-                          }`}
-                        >
-                          <span>{link.name}</span>
-                          {isActive && (
-                            <span className="w-2 h-2 rounded-full bg-[#0066FF] shadow-[0_0_8px_#0066FF]" />
-                          )}
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-
-                {/* Mobile CTA */}
-                <div className="mt-8 pt-6 border-t border-white/[0.08]">
-                  <Link
-                    href="/contact"
-                    onClick={closeMobile}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#009BFF] rounded-full shadow-[0_4px_18px_rgba(0,102,255,0.4)] transition-all"
-                  >
-                    <span>Get a Custom Quote</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-
-                {/* Mobile Quick Contact */}
-                <div className="mt-auto pt-8 border-t border-white/[0.08] text-xs text-white/50 space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5 text-[#0066FF]" />
-                    <span>info@csatechnologiesco.com</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-3.5 h-3.5 text-[#0066FF]" />
-                    <span>+91 92112 93383</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
     </header>
+      {/* Mobile Navigation Drawer */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className="fixed inset-0 top-0 bg-[#060E1A] z-40 lg:hidden"
+          >
+            <div className="flex flex-col pt-24 px-6 pb-8 h-full overflow-y-auto">
+              <div className="flex flex-col gap-1.5">
+                {NAV_ITEMS.map((link, i) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: -16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04, duration: 0.25 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={closeMobile}
+                        className={`flex items-center justify-between py-3.5 px-4 text-base font-heading font-bold rounded-xl transition-all ${
+                          isActive
+                            ? 'text-white bg-white/[0.08] border border-white/[0.08]'
+                            : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                        }`}
+                      >
+                        <span>{link.name}</span>
+                        {isActive && (
+                          <span className="w-2 h-2 rounded-full bg-[#0066FF] shadow-[0_0_8px_#0066FF]" />
+                        )}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Mobile CTA */}
+              <div className="mt-8 pt-6 border-t border-white/[0.08]">
+                <Link
+                  href="/contact"
+                  onClick={closeMobile}
+                  className="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#009BFF] rounded-full shadow-[0_4px_18px_rgba(0,102,255,0.4)] transition-all"
+                >
+                  <span>Get a Custom Quote</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Mobile Quick Contact */}
+              <div className="mt-auto pt-8 border-t border-white/[0.08] text-xs text-white/50 space-y-2">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-[#0066FF]" />
+                  <span>info@csatechnologiesco.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-[#0066FF]" />
+                  <span>+91 92112 93383</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
