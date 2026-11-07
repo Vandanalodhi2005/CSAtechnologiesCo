@@ -26,6 +26,7 @@ const COMPANY_LINKS = [
   { name: 'About Us', href: '/about' },
   { name: 'Our Services', href: '/services' },
   // { name: 'Courses & Training', href: '/courses' },
+  { name: 'Careers & Hiring', href: '/careers' },
   { name: 'Portfolio & Case Studies', href: '/portfolio' },
   { name: 'Insights & Blog', href: '/blog' },
   { name: 'Contact Us', href: '/contact' },

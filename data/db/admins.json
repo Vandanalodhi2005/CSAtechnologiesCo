@@ -1,0 +1,11 @@
+[
+  {
+    "id": "admin-csa-primary",
+    "email": "admin@csatechnologies.co",
+    "password": "$2b$10$WazTNHeEEhmUnJgnE5NtPe00uBHLb.X7oArxDN/wHFTu9yqbt98CK",
+    "name": "CSA Administrator",
+    "role": "admin",
+    "createdAt": "2026-11-07T04:48:59.930Z",
+    "updatedAt": "2026-11-07T04:48:59.931Z"
+  }
+]

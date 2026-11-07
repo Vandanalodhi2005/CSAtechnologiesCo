@@ -12,8 +12,8 @@ export function OrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'CSA Technologies CO',
-    url: 'https://csatechnologies.co',
-    logo: 'https://csatechnologies.co/logo/csa-logo.svg',
+    url: 'https://csatechnologiesco.com',
+    logo: 'https://csatechnologiesco.com/logo/csa-logo.svg',
     description:
       'CSA Technologies CO builds modern business websites, e-commerce platforms and custom web applications for growing businesses.',
     email: 'info@csatechnologiesco.com',
@@ -56,7 +56,7 @@ export function WebSiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'CSA Technologies CO',
-    url: 'https://csatechnologies.co',
+    url: 'https://csatechnologiesco.com',
     description:
       'Professional IT company website for CSA Technologies CO — web development, e-commerce, and custom software solutions.',
     publisher: {
@@ -72,7 +72,7 @@ export function LocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'CSA Technologies CO',
-    url: 'https://csatechnologies.co',
+    url: 'https://csatechnologiesco.com',
     telephone: '+91-92112-93383',
     email: 'info@csatechnologiesco.com',
     address: {
