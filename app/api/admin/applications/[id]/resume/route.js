@@ -21,18 +21,27 @@ export async function GET(request, { params }) {
       );
     }
 
-    // Sanitize path to prevent path traversal
-    const relativePath = application.resumeUrl.replace(/^\/+/, '');
-    const absolutePath = path.join(process.cwd(), 'public', relativePath);
+    let fileBuffer = null;
 
-    if (!fs.existsSync(absolutePath)) {
+    // 1. First priority: Check if stored directly in MongoDB Atlas (Vercel / Cloud storage)
+    if (application.resumeBase64) {
+      fileBuffer = Buffer.from(application.resumeBase64, 'base64');
+    } else if (application.resumeUrl) {
+      // 2. Fallback to local disk storage
+      const relativePath = application.resumeUrl.replace(/^\/+/, '');
+      const absolutePath = path.join(process.cwd(), 'public', relativePath);
+      if (fs.existsSync(absolutePath)) {
+        fileBuffer = fs.readFileSync(absolutePath);
+      }
+    }
+
+    if (!fileBuffer) {
       return NextResponse.json(
         { success: false, error: 'Resume file is missing from storage.' },
         { status: 404 }
       );
     }
 
-    const fileBuffer = fs.readFileSync(absolutePath);
     const downloadName = `${application.fullName.replace(/[^a-zA-Z0-9]/g, '_')}_Resume.pdf`;
 
     return new Response(fileBuffer, {

@@ -134,18 +134,27 @@ export async function POST(request) {
       );
     }
 
-    // 7. Store Resume securely
-    ensureUploadDir();
+    // 7. Store Resume securely (Serverless-safe for Vercel & local disk)
+    const buffer = Buffer.from(await resumeFile.arrayBuffer());
+    const resumeBase64 = buffer.toString('base64');
+
     const sanitizedCandidateName = fullName
       .toLowerCase()
       .replace(/[^a-z0-9]/g, '-')
       .substring(0, 30);
     const uniqueSuffix = `${Date.now()}-${crypto.randomBytes(4).toString('hex')}`;
     const filename = `resume-${sanitizedCandidateName}-${uniqueSuffix}.pdf`;
-    const targetFilePath = path.join(UPLOAD_DIR, filename);
 
-    const buffer = Buffer.from(await resumeFile.arrayBuffer());
-    fs.writeFileSync(targetFilePath, buffer);
+    // Attempt local disk save if filesystem allows, but never crash on Vercel read-only filesystem
+    try {
+      ensureUploadDir();
+      const targetFilePath = path.join(UPLOAD_DIR, filename);
+      fs.writeFileSync(targetFilePath, buffer);
+    } catch (fsError) {
+      // Gracefully continue; resume is securely persisted in MongoDB Atlas as resumeBase64
+      console.warn('Vercel serverless environment detected (read-only filesystem). Storing resume in cloud DB.');
+    }
+
     const resumeUrl = `/uploads/resumes/${filename}`;
 
     // 8. Save Application Record in Database
@@ -161,6 +170,8 @@ export async function POST(request) {
       linkedin,
       github,
       resumeUrl,
+      resumeBase64,
+      resumeFileName: originalName || filename,
       coverLetter,
       applicationStatus: 'Pending',
     });
